@@ -12,13 +12,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 app = Flask(__name__)
 
 # Load your pre-trained vegetable classification model
-vegetables = [
-    "banana", "beans broad", "beans cluster", "beans haricot", "beetroot",
-    "bitter guard", "bottle guard", "brinjal long", "brinjal[purple]", "cabbage",
-    "capsicum green", "carrot", "cauliflower", "chilli green", "colocasia arvi",
-    "corn", "cucumber", "drumstick", "garlic", "ginger", "ladies finger",
-    "lemons", "Onion red", "potato", "sweet potato", "tomato", "Zuchini"
-]
+vegetables = ['annona', 'apple', 'banana', 'beet', 'bell_pepper', 'cabbage', 'carrot', 'cucumber', 'egg', 'eggplant', 'garlic', 'guava', 'onion', 'orange', 'pear', 'pineapple', 'pitaya', 'potato', 'tomato', 'zucchini']
 model = YOLO('fresh_model.pt')
 pack_names = ['Complan Classic Creme', 'Complan Kesar Badam', 'Complan Nutrigro Badam Kheer', 'Complan Pista Badam', 'Complan Royal Chocolate', 'Complan Royale Chocolate', 'EY AAAM TULSI TURMERIC FACEWASH50G', 'EY ADVANCED GOLDEN GLOW PEEL OFF M- 50G', 'EY ADVANCED GOLDEN GLOW PEEL OFF M- 90G', 'EY EXF WALNUT SCRUB AYR 200G', 'EY HALDICHANDAN FP HF POWDER 25G', 'EY HYD-EXF WALNT APR SCRUB AYR100G', 'EY HYDR - EXF WALNUT APRICOT SCRUB 50G', 'EY NAT GLOW ORANGE PEEL OFF AY 90G', 'EY NATURALS NEEM FACE WASH AY 50G', 'EY RJ CUCUMBER ALOEVERA FACEPAK50G', 'EY TAN CHOCO CHERRY PACK 50G', 'EY_SCR_PURIFYING_EXFOLTNG_NEEM_PAPAYA_50G', 'Everyuth Naturals Body Lotion Nourishing Cocoa 200ml', 'Everyuth Naturals Body Lotion Rejuvenating Flora 200ml', 'Everyuth Naturals Body Lotion Soothing Citrus 200ml', 'Everyuth Naturals Body Lotion Sun Care Berries SPF 15 200ml', 'Glucon D Nimbu Pani', 'Glucon D Nimbu Pani 1-KG', 'Glucon D Regular', 'Glucon D Regular 1-KG', 'Glucon D Regular 2-KG', 'Glucon D Tangy orange', 'Glucon D Tangy orange 1-KG', 'Nutralite ACHARI MAYO 300g-275g-25g-', 'Nutralite ACHARI MAYO 30g', 'Nutralite CHEESY GARLIC MAYO 300g-275g-25g-', 'Nutralite CHEESY GARLIC MAYO 30g', 'Nutralite CHOCO SPREAD CALCIUM 275g', 'Nutralite DOODHSHAKTHI PURE GHEE 1L', 'Nutralite TANDOORI MAYO 300g-275g-25g-', 'Nutralite TANDOORI MAYO 30g', 'Nutralite VEG MAYO 300g-275g-25g-', 'Nycil Prickly Heat Powder', 'SUGAR FREE GOLD 500 PELLET', 'SUGAR FREE GOLD POWDER 100GM', 'SUGAR FREE GOLD SACHET 50', 'SUGAR FREE GOLD SACHET 50 SUGAR FREE GOLD SACHET 50', 'SUGAR FREE GRN 300 PELLET', 'SUGAR FREE NATURA 500 PELLET', 'SUGAR FREE NATURA DIET SUGAR', 'SUGAR FREE NATURA DIET SUGAR 80GM', 'SUGAR FREE NATURA SACHET 50', 'SUGAR FREE NATURA SWEET DROPS', 'SUGAR FREE NATURA_ POWDER_CONC_100G', 'SUGAR FREE_GRN_ POWDER_CONC_100G', 'SUGARLITE POUCH 500G']
 
