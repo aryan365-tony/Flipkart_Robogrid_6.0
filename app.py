@@ -22,7 +22,7 @@ vegetables = [
 model = YOLO('fresh_model.pt')
 # Load the YOLO model
 yolo_model = YOLO('another_model.pt')  # Adjust the path as needed
-CONFIDENCE_THRESHOLD = 0.1
+CONFIDENCE_THRESHOLD = 0.35
 
 # Initialize EasyOCR reader (for English language)
 reader = easyocr.Reader(['en'])
