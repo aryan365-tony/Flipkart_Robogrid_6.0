@@ -33,7 +33,7 @@
       margin-top: 10px;
       text-align: center;
     }
-    #switch-camera, #take-picture {
+    #switch-camera {
       margin-top: 20px;
     }
   </style>
@@ -45,17 +45,15 @@
   </div>
   <div id="prediction-box">
     <p id="prediction">Prediction: <span id="prediction-text">N/A</span></p>
-    <p id="Text Present">Text Present <span id="prediction-text2">N/A</span></p>
+    <p id="Text Present">Text Present: <span id="prediction-text2">N/A</span></p>
   </div>
   <button id="switch-camera">Switch Camera</button>
-  <button id="take-picture">Take Picture</button>
 
   <script>
     const video = document.getElementById('video');
     const predictionElem = document.getElementById('prediction-text');
     const predictionElem2 = document.getElementById('prediction-text2');
     const switchCameraBtn = document.getElementById('switch-camera');
-    const takePictureBtn = document.getElementById('take-picture');
     let useFrontCamera = false; // Start with front-facing camera
 
     // Function to start the camera stream
@@ -84,10 +82,8 @@
       startCamera(); // Restart camera with the new mode
     });
 
-    // Take picture button event listener
-    takePictureBtn.addEventListener('click', () => {
-      predictionElem.textContent = '';
-      predictionElem2.textContent = '';
+    // Function to capture and send image every second
+    setInterval(() => {
       const canvas = document.createElement('canvas');
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
@@ -142,7 +138,8 @@
         }
       })
       .catch(err => console.error('Error:', err));
-    });
+    }, 1000); // Capture every 1000 milliseconds (1 second)
+
   </script>
 </body>
 </html>
